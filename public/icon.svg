@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#1D1D1B"/>
+  <path d="M106 318a150 150 0 0 1 75-130" stroke="#EA3324" stroke-width="44" fill="none" stroke-linecap="round"/>
+  <path d="M207 175a150 150 0 0 1 98 0" stroke="#F6D35C" stroke-width="44" fill="none"/>
+  <path d="M331 188a150 150 0 0 1 75 130" stroke="#34A853" stroke-width="44" fill="none" stroke-linecap="round"/>
+  <path d="M256 318 330 226" stroke="#FDF8CF" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="256" cy="318" r="24" fill="#FDF8CF"/>
+  <text x="256" y="430" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="92" fill="#F6D35C" letter-spacing="4">NPS</text>
+</svg>

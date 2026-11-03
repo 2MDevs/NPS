@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import "./styles/dark-theme.css";
+
+/* As classes "dark:" do Tailwind seguem o botão de tema (classe .dark no <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+  }
+}
+
+/* Safe area padding utilities for modern mobile screens */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+
+/* ------------------------------------------------------------------
+   Celular: visual de aplicativo (fontes, espaçamentos e campos)
+   ------------------------------------------------------------------ */
+.ds-app, .ds-app * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 639px) {
+  /* Títulos das telas menores (a barra superior já mostra o nome da tela) */
+  .ds-app main h1, .ds-window h1 {
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+  }
+  .ds-app main .text-3xl, .ds-window .text-3xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  /* Menos "respiro" nas bordas para aproveitar a tela */
+  .ds-app main .p-6, .ds-window .p-6 {
+    padding: 1rem;
+  }
+  .ds-app main .p-8, .ds-window .p-8 {
+    padding: 1.25rem;
+  }
+  .ds-app main .space-y-6 > :not(:last-child), .ds-window .space-y-6 > :not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  /* Campos com 16px: evita o zoom automático do iPhone ao tocar */
+  input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Modo escuro: base (as conversões de cor ficam em styles/dark-theme.css)
+   ------------------------------------------------------------------ */
+html.dark {
+  color-scheme: dark;
+}
+html.dark body {
+  background-color: #0b1220;
+  color: #e6eaf1;
+}
+html.dark .ds-app {
+  color: #e6eaf1;
+}
+html.dark .ds-app ::-webkit-scrollbar-thumb {
+  background-color: #334155;
+}
+
+/* ------------------------------------------------------------------
+   Identidade visual da marca (hummm! Pizzas) — tela de login e primeiro acesso
+   Fonte do nome "NPS": Poppins
+   (para usar o arquivo oficial da agência, substitua mantendo o nome)
+   ------------------------------------------------------------------ */
+.ds-brand-font {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 800;
+}
+/* Cores da marca: amarelo #F6D35C, vermelho #EA3324, creme #FDF8CF, carvão #1D1D1B.
+   Os tons "azul" usados nestas telas passam a usar o amarelo da marca, e os cinzas ficam quentes. */
+.ds-brand-login {
+  /* Destaques em amarelo da marca (pedido do TI); o vermelho fica só na língua da carinha */
+  --color-blue-200: #fdf8cf;
+  --color-blue-300: #f9e08f;
+  --color-blue-400: #f6d35c;
+  --color-blue-500: #f6d35c;
+  --color-blue-600: #f6d35c;
+  --color-blue-700: #e6b82c;
+  --color-blue-800: #c99f2a;
+  --color-indigo-500: #f6d35c;
+  --color-indigo-600: #f6d35c;
+  --color-slate-100: #f5f5f4;
+  --color-slate-200: #e7e5e4;
+  --color-slate-300: #d6d3d1;
+  --color-slate-400: #a8a29e;
+  --color-slate-500: #78716c;
+  --color-slate-600: #57534e;
+  --color-slate-700: #44403c;
+  --color-slate-800: #34312d;
+  --color-slate-900: #1c1917;
+}
